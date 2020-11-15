@@ -1,66 +1,31 @@
 // pages/home/home.js
+
+// {} 表示对象自变量
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-
+    name: 'Coderwhy',
+    englishName: '旺仔牛奶',
+    students:[
+      {id:110, name:"kebe", age:35},
+      {id:111, name:"jams", age:36}
+    ],
+    count: 0
   },
+  handleBtnClick() {
+    // 错误做法：虽然数据改变 但是界面不会改变
+    // this.data.count++,
+    // console.log('绑定函数发生了点击'+ this.data.count)
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
+    // 2.this.setData()
+    this.setData({
+      count: this.data.count+1
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  handleSubtraction() {
+    console.log("点击了-号"),
+    this.setData({
+      count: this.data.count-1
+    })
   }
+
 })

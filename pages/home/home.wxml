@@ -1,3 +1,28 @@
 <!--pages/home/home.wxml-->
-<text class="title">pages/home/home.wxml</text>
-<button size="mini">按钮</button>
+
+
+<!--  标签说明
+<view>：视图组件（容器）
+引入js变量语法 {{}} -> Musttache 
+<wx:for>  数据遍历
+-->
+
+<!-- 01.小程序的数据绑定 -->
+<view>Hello {{name}}</view>
+<view>英文姓名：{{englishName +"Yearning"}}</view>
+
+
+<!-- 2.列表展示  <wx:for>  数据遍历 item 对象-->
+<view wx:for="{{students}}">{{item.id}} {{item.name}} {{item.age}}</view>
+
+<!-- 3.时间监听改变data 
+  bindtap -> 绑定函数 只需要函数名称即可
+-->
+<view>当前计数：{{count}}</view>
+<button size="mini" bindtap="handleBtnClick">+</button>
+<button size="mini" bindtap="handleSubtraction">-</button>
+
+<!-- 编程范式
+  1.命令式编程：原生操作DOM节点
+  2.声明式编程：Vue/React/Angular
+ -->
